@@ -1,10 +1,13 @@
 // Navbar.js
 import React from 'react';
 import { Link } from 'react-router-dom';
+import bulma from 'bulma/css/bulma.min.css';
+import './Navbar.css';
+
 
 function Navbar() {
   return (
-    <nav className="navbar is-dark" role="navigation" aria-label="main navigation">
+    <nav className="navbar" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
         <Link to="/" className="navbar-item">
           <strong>Humza Shah | Software Engineer</strong>
