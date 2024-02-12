@@ -1,8 +1,14 @@
-/* Navbar.css */
-.navbar {
-  background-color: #ffffdf; /* New background color */
+.navbar.is-fixed-top {
+  background-color: #ffffdf;
   transition: background-color 0.5s ease;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
 }
+
+
+
 
 .navbar a {
   color: #333333; /* Adjust text color for better visibility */
