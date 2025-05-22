@@ -1,0 +1,24 @@
+.vertical-name {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .letter {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 4px 0;
+  }
+  
+  .hero-wrapper {
+    max-height: 10px;
+    overflow: 'hidden'
+    /* Optional: max-width or padding if needed */
+  }
+
+
+.highlight {
+    color: #00bfff;
+}
+
+ 
+  

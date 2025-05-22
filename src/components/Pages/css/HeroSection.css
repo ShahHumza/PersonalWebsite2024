@@ -1,0 +1,152 @@
+/* Custom CSS for HeroSection.css - Planet Theme */
+
+/* Base Hero Section Styling */
+.planet-theme-hero {
+  background: linear-gradient(to bottom right, #0a0a1a, #000000); /* Deep space gradient */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Starfield - Using multiple layers of pseudo-elements */
+.planet-theme-hero::before,
+.planet-theme-hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: repeat;
+  pointer-events: none; /* Allow clicks to pass through */
+  opacity: 0;
+  transition: opacity 1.5s ease-in;
+}
+
+.planet-theme-hero::before {
+  background-image: radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+                    radial-gradient(circle at 30% 70%, rgba(255, 255, 255, 0.15) 1px, transparent 1px),
+                    radial-gradient(circle at 70% 40%, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+                    radial-gradient(circle at 90% 10%, rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+  background-size: 150px 150px, 200px 200px, 180px 180px, 160px 160px;
+  animation: twinkle-stars 60s linear infinite;
+}
+
+.planet-theme-hero::after {
+  background-image: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                    radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.07) 1px, transparent 1px),
+                    radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 250px 250px, 300px 300px, 280px 280px;
+  animation: twinkle-stars-slow 90s linear infinite;
+  animation-delay: 5s;
+}
+
+.planet-theme-hero.is-active-background::before,
+.planet-theme-hero.is-active-background::after {
+  opacity: 1; /* Fade in stars on activation */
+}
+
+/* Main Stylized Planet */
+
+/* Subtle Galactic Glows / Nebulae */
+.galactic-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  z-index: 0; /* Behind planet and text */
+  transition: opacity 2s ease-out;
+}
+
+.galactic-glow-1 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(135, 206, 250, 0.2) 0%, transparent 70%); /* Light blue glow */
+  top: 5%;
+  left: 10%;
+  animation: move-glow 30s infinite alternate;
+}
+
+.galactic-glow-2 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(200, 100, 250, 0.15) 0%, transparent 70%); /* Purple glow */
+  bottom: 0%;
+  right: 5%;
+  animation: move-glow 40s infinite alternate-reverse;
+  animation-delay: 5s;
+}
+
+.planet-theme-hero.is-active-background .galactic-glow {
+  opacity: 0.2; /* Fade in glows on activation */
+}
+
+
+/* Text Animations */
+.hero-main-title,
+.hero-tagline {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.hero-main-title.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.2s; /* Delay for title */
+}
+
+.hero-tagline.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.4s; /* Delay for tagline */
+}
+
+/* Highlighted Text */
+.highlight-cosmic {
+  color: #add8e6; /* Light blue for cosmic feel */
+  text-shadow: 0 0 15px rgba(173, 216, 230, 0.8);
+}
+/* Highlighted Text */
+.highlight-nebula {
+  color: #87CEFA; /* Light Sky Blue */
+  text-shadow: 0 0 10px rgba(135, 206, 250, 0.6);
+}
+
+
+/* Call to Action Button */
+.hero-cta-cosmic {
+  background-color: #add8e6; /* Light blue */
+  color: #0a0a1a; /* Dark text for contrast */
+  font-weight: bold;
+  border: none;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 5px 20px rgba(173, 216, 230, 0.4);
+}
+
+.hero-cta-cosmic:hover {
+  background-color: #90b0c6; /* Slightly darker blue on hover */
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(173, 216, 230, 0.6);
+}
+
+
+/* Keyframe Animations */
+
+@keyframes twinkle-stars {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 100% 100%; }
+}
+
+@keyframes twinkle-stars-slow {
+  0% { background-position: 0% 0%; }
+  100% { background-position: -100% -100%; }
+}
+
+@keyframes move-glow {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(20px, 15px); }
+  100% { transform: translate(0, 0); }
+}
+

@@ -1,0 +1,25 @@
+/* Navbar.css */
+.navbar-item.is-active {
+  border-bottom: 3px solid purple; /* Or any color you prefer */
+}
+
+.navbar-brand .navbar-item {
+  padding: 1rem 1.5rem; /* Adjust padding as needed */
+}
+
+.navbar-menu {
+  padding-left: 1.5rem; /* Adjust spacing for the menu items */
+}
+
+.navbar-start .navbar-item {
+  padding: 0.5rem 1rem; /* Adjust padding for the menu links */
+  color: #363636; /* Adjust text color */
+}
+
+.navbar-start .navbar-item:hover {
+  color: #000; /* Adjust hover color */
+}
+
+.navbar-end .navbar-item .buttons .button {
+  margin-left: 0.5rem; /* Adjust spacing between social icons */
+}
