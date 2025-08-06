@@ -1,63 +1,63 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import './Pages/css/Navbar.css'; // Import your custom CSS file
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom'; // Uncommented to use Link
+
+import './Pages/css/Navbar.css'; // Import the dedicated CSS file
 
 function Navbar() {
+  const [isActive, setIsActive] = useState(false);
+
+  // Function to toggle the mobile menu for responsiveness
+  const toggleBurger = () => {
+    setIsActive(!isActive);
+  };
+
   return (
-    <nav className="navbar is-transparent" role="navigation" aria-label="main navigation">
-      <div className="navbar-brand">
-        <Link to="/" className="navbar-item">
-          <span className="has-text-weight-semibold is-size-5">Humza Shah</span>
-        </Link>
-
-        <a role="button" className="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
-      </div>
-
-      <div id="navbarBasicExample" className="navbar-menu">
-        <div className="navbar-start">
-          <Link to="/" className="navbar-item">
-            Home
+    <nav className="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+      <div className="container">
+        <div className="navbar-brand">
+          {/* Brand/Logo - Using a placeholder image for the logo */}
+          {/* Replace 'https://placehold.co/40x40/007bff/ffffff?text=Logo' with your actual logo path */}
+          <Link to="/" className="navbar-item logo-container"> {/* Changed <a> to Link */}
+            <img src="https://placehold.co/40x40/007bff/ffffff?text=JS" alt="Logo" className="logo-image" />
           </Link>
 
-          <Link to="/projects" className="navbar-item">
-            Projects
-          </Link>
-
-          <Link to="/Resume" className="navbar-item">
-            Resume
-          </Link>
-
-          <Link to="/about" className="navbar-item">
-            About
-          </Link>
-
-          <Link to="/blog" className="navbar-item">
-            Blog
-          </Link>
-
-          <Link to="/contact" className="navbar-item">
-            Contact
-          </Link>
+          {/* Burger menu for mobile - Bulma's default responsive behavior */}
+          <a
+            role="button"
+            className={`navbar-burger burger ${isActive ? 'is-active' : ''}`}
+            aria-label="menu"
+            aria-expanded={isActive ? 'true' : 'false'}
+            onClick={toggleBurger}
+          >
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
         </div>
 
-        <div className="navbar-end">
-          <div className="navbar-item">
-            <div className="buttons">
-              <a href="https://github.com/" target="_blank" rel="noopener noreferrer" className="button is-light">
-                <span className="icon">
-                  <i className="fab fa-github"></i>
-                </span>
-              </a>
-              <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" className="button is-light">
-                <span className="icon">
-                  <i className="fab fa-linkedin-in"></i>
-                </span>
-              </a>
-            </div>
+        {/* Navbar menu - Aligned to the right */}
+        <div id="navbarBasicExample" className={`navbar-menu ${isActive ? 'is-active' : ''}`}>
+          <div className="navbar-end custom-navbar-end"> {/* Added custom-navbar-end for specific alignment */}
+            {/* Navigation Links */}
+            <Link to="/" className="navbar-item"> {/* Changed <a> to Link */}
+              Home
+            </Link>
+            <Link to="/about" className="navbar-item"> {/* Changed <a> to Link */}
+              About
+            </Link>
+            <Link to="/projects" className="navbar-item"> {/* Changed <a> to Link */}
+              Projects
+            </Link>
+            <Link to="/skills" className="navbar-item"> {/* Changed <a> to Link */}
+              Skills
+            </Link>
+            <Link to="/golf" className="navbar-item"> {/* Changed <a> to Link */}
+              Golf
+            </Link>
+            <Link to="/contact" className="navbar-item"> {/* Changed <a> to Link */}
+              Contact
+            </Link>
+            {/* Removed social media buttons as per the image */}
           </div>
         </div>
       </div>

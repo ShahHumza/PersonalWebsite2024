@@ -1,25 +1,84 @@
-/* Navbar.css */
-.navbar-item.is-active {
-  border-bottom: 3px solid purple; /* Or any color you prefer */
+/* Navbar Wrapper */
+.custom-navbar {
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  margin: 20px auto;
+  max-width: 95%;
+  padding: 0 1rem;
 }
 
-.navbar-brand .navbar-item {
-  padding: 1rem 1.5rem; /* Adjust padding as needed */
+/* H Logo */
+.logo-text {
+  padding: 0.5rem 1rem;
 }
 
-.navbar-menu {
-  padding-left: 1.5rem; /* Adjust spacing for the menu items */
+.logo-h {
+  font-weight: 700;
+  font-size: 1.75rem;
+  color: #007bff;
+  border: 2px solid #007bff;
+  border-radius: 50%;
+  padding: 0.25rem 0.75rem;
+  display: inline-block;
+  line-height: 1;
 }
 
-.navbar-start .navbar-item {
-  padding: 0.5rem 1rem; /* Adjust padding for the menu links */
-  color: #363636; /* Adjust text color */
+/* Push navbar items right of center */
+.navbar-links {
+  margin-left: auto;
+  padding-left: 3rem;
 }
 
-.navbar-start .navbar-item:hover {
-  color: #000; /* Adjust hover color */
+/* Navbar item hover underline */
+.navbar-item {
+  color: #363636;
+  position: relative;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease;
 }
 
-.navbar-end .navbar-item .buttons .button {
-  margin-left: 0.5rem; /* Adjust spacing between social icons */
+.navbar-item:hover {
+  color: #007bff;
+  background-color: transparent !important;
+}
+
+.navbar-item::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background-color: #007bff;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.navbar-item:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.navbar-item.is-active::after {
+  width: 100%;
+  left: 0;
+  background-color: #007bff;
+}
+
+/* Mobile styles */
+@media screen and (max-width: 1023px) {
+  .navbar-menu {
+    box-shadow: none;
+    border-radius: 0;
+  }
+  .navbar-links {
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .navbar-item::after {
+    display: none;
+  }
+  .navbar-item:hover {
+    background-color: #f5f5f5 !important;
+  }
 }
