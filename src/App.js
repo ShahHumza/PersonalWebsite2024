@@ -8,6 +8,7 @@ import AboutMePage from './components/Pages/AboutMe';
 import 'bulma/css/bulma.min.css';
 
 
+
 function App() {
   return (
     <>

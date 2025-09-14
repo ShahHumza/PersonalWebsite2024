@@ -9,11 +9,10 @@ function HeroSection() {
       <div className="hero-split hero-left">
         <div className="overlay">
           <img  alt="Profile" className="profile-image" />
-          <h1 className="title is-2 has-text-white">John Doe</h1>
+          <h1 className="title is-2 has-text-white">Humza Shah</h1>
           <h2 className="subtitle is-4 has-text-white">Full Stack Engineer & Avid Golfer</h2>
         </div>
       </div>
-      <div className="hero-split hero-right" />
     </section>
   );
 }
