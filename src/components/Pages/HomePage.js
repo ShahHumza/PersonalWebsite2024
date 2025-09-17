@@ -6,8 +6,11 @@ const App = () => {
   const [modalMessage, setModalMessage] = useState('');
   const [showScrollButton, setShowScrollButton] = useState(false);
 
+  // Update this line to point to the image in your public folder.
+  // Assuming your image is in `public/Images/IMG_9724.PNG`
+  const profilePicUrl = '/Images/IMG_9724.PNG'; 
+
   // Replace these with the embed URLs for your Instagram Reels
-  // To get the embed URL, click the "..." on your Instagram post and choose "Embed"
   const reelUrls = [
     'https://www.instagram.com/p/DNOABsmORBs/embed/',
     'https://www.instagram.com/reel/DNQiqmTuks_/embed/',
@@ -152,6 +155,17 @@ const App = () => {
             width: 100%;
             height: 100%;
           }
+
+          .profile-picture {
+           
+            object-fit: cover;
+            border: 5px solid white;
+          }
+
+          .profile-pictures {
+            width: 200px;
+            height: 200px;
+          }
         `}
       </style>
 
@@ -212,6 +226,14 @@ const App = () => {
           {/* Hero Section */}
           <section id="home" className="section has-text-centered min-h-screen-minus-header is-flex is-align-items-center is-justify-content-center hero-background">
             <div className="container is-fullhd">
+                {/* Profile Picture */}
+                <figure className="profile-pictures image is-inline-block mb-5">
+                    <img
+                        className="is-rounded-full profile-picture is-shadow-lg"
+                        src={profilePicUrl}
+                        alt="Profile of Humza Shah"
+                    />
+                </figure>
               <h1 className="title is-1 has-text-white">
                 Humza Shah: Full-Stack Engineer
               </h1>
@@ -236,8 +258,8 @@ const App = () => {
               <div className="columns is-multiline is-centered">
                 <div className="column is-half-tablet is-one-quarter-desktop">
                   <div className="box is-rounded-lg is-shadow-md hover:is-shadow-xl transition-all hover:is-scale-105">
-                    <h3 className="title is-5">React</h3>
-                    <p className="subtitle is-6">Building dynamic user interfaces.</p>
+                    <h3 className="title is-5">Java</h3>
+                    <p className="subtitle is-6">Ensuring code quality and reliability.</p>
                   </div>
                 </div>
                 <div className="column is-half-tablet is-one-quarter-desktop">
@@ -248,8 +270,8 @@ const App = () => {
                 </div>
                 <div className="column is-half-tablet is-one-quarter-desktop">
                   <div className="box is-rounded-lg is-shadow-md hover:is-shadow-xl transition-all hover:is-scale-105">
-                    <h3 className="title is-5">TypeScript</h3>
-                    <p className="subtitle is-6">Ensuring code quality and reliability.</p>
+                    <h3 className="title is-5">React</h3>
+                    <p className="subtitle is-6">Building dynamic user interfaces.</p>
                   </div>
                 </div>
                 <div className="column is-half-tablet is-one-quarter-desktop">
@@ -269,20 +291,20 @@ const App = () => {
               <div className="columns is-multiline is-centered">
                 <div className="column is-full-mobile is-one-third-desktop">
                   <div className="box is-rounded-lg is-shadow-md hover:is-shadow-xl transition-all hover:is-scale-105 is-clickable" onClick={() => handleProjectClick('Project A')}>
-                    <h3 className="title is-5">Project A</h3>
-                    <p className="subtitle is-6">A web application for task management.</p>
+                    <h3 className="title is-5">Question Answer System</h3>
+                    <p className="subtitle is-6">Using BERT, a Machine Learning model, we created AI that is capable of answering any of your questions.</p>
                   </div>
                 </div>
                 <div className="column is-full-mobile is-one-third-desktop">
                   <div className="box is-rounded-lg is-shadow-md hover:is-shadow-xl transition-all hover:is-scale-105 is-clickable" onClick={() => handleProjectClick('Project B')}>
-                    <h3 className="title is-5">Project B</h3>
-                    <p className="subtitle is-6">An e-commerce platform with Stripe integration.</p>
+                    <h3 className="title is-5">Workout Tracker</h3>
+                    <p className="subtitle is-6">An advanced system to count calories, track fitness, and make yourself better.</p>
                   </div>
                 </div>
                 <div className="column is-full-mobile is-one-third-desktop">
                   <div className="box is-rounded-lg is-shadow-md hover:is-shadow-xl transition-all hover:is-scale-105 is-clickable" onClick={() => handleProjectClick('Project C')}>
-                    <h3 className="title is-5">Project C</h3>
-                    <p className="subtitle is-6">A mobile-first recipe sharing app.</p>
+                    <h3 className="title is-5">KeyStone Game Devleopement</h3>
+                    <p className="subtitle is-6">Created a mideval like game, similar to the likes of Elden Ring, with bosses, mini fights, mazes and more!</p>
                   </div>
                 </div>
               </div>
